@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Update</title>
     
 </head>
@@ -56,35 +57,36 @@ if (!preg_match ("/^[0-9]*$/", $phoneno) ){
         }
     }
     ?>
+    <center>
     <form class="form-container" method="POST">
         <div class="form-group">
-            <label for="username">Username</label>
+            <label for="username"><b>Username</b></label>
             <br>
-            <input type="username" class="form-control <?php echo $usernameErr ? 'is-invalid' : null; ?>" id="username" name="username" placeholder="username" value="<?php echo $username; ?>">
+            <input type="username"  <?php echo $usernameErr ? 'is-invalid' : null; ?>" id="username" name="username" placeholder="username" value="<?php echo $username; ?>">
             <div class="invalid-feedback">
                 <?php echo $usernameErr; ?>
             </div>
         </div>
         <div class="form-group">
-            <label for="email">Email Address</label>
+            <label for="email"><b>Email Address</b></label>
             <br>
-            <input type="email" class="form-control <?php echo $emailErr ? 'is-invalid' : null; ?>" name="email" id="email" placeholder="example@gmail.com" value="<?php echo $email; ?>">
+            <input type="email"  <?php echo $emailErr ? 'is-invalid' : null; ?> name="email" id="email" placeholder="example@gmail.com" value="<?php echo $email; ?>">
             <small id="emailHelp" class="form-text text-muted"></small>
             <div class="invalid-feedback">
                 <?php echo $emailErr; ?>
             </div>
         </div>
         <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password"></b>Password</b></label>
             <br>
-            <input type="password" class="form-control <?php echo $passwordErr ? 'is-invalid' : null; ?>" name="password" id="password" placeholder="Password" value="<?php echo $password; ?>">
+            <input type="password"  <?php echo $passwordErr ? 'is-invalid' : null; ?> name="password" id="password" placeholder="Password" value="<?php echo $password; ?>">
             <div class="invalid-feedback">
                 <?php echo $passwordErr; ?>
             </div>
             <div class="form-group">
-            <label for="phoneno">phoneno</label>
+            <label for="phoneno"><b>phoneno</b></label>
             <br>
-            <input type="phoneno" class="form-control <?php echo $phonenoErr ? 'is-invalid' : null; ?>" name="phoneno" id="phoneno" placeholder="Phoneno" value="<?php echo $phoneno; ?>">
+            <input type="phoneno"  <?php echo $phonenoErr ? 'is-invalid' : null; ?> name="phoneno" id="phoneno" placeholder="Phoneno" value="<?php echo $phoneno; ?>">
             <div class="invalid-feedback">
                 <?php echo $phonenoErr; ?>
             </div>
@@ -94,5 +96,6 @@ if (!preg_match ("/^[0-9]*$/", $phoneno) ){
         <button type="submit" name="update" class="btn btn-warning update">Update</button>
         <a href="view.php">
     </form>
+</center>
 </body>
 </html>

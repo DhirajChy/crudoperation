@@ -1,12 +1,11 @@
 <?php 
 
+include "sessionstart.php";
 include "connect.php";
-session_start();
-echo  $_SESSION['email'];
-if (empty($_SESSION['email'])){
+include "navbar.php";
+if (!isset($_SESSION['email'])){
     header('location:index.php');
-}
-
+} 
 $sql = "SELECT * FROM form";
 
 $result = $conn->query($sql);
@@ -18,6 +17,8 @@ $result = $conn->query($sql);
 <html>
 
 <head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    
     <style>
         
 .topnav {
@@ -42,16 +43,6 @@ $result = $conn->query($sql);
 
 <body>
 
-    <div class="container">
-        <div class="topnav">
-        <a href="logout.php">Logout
-        <a href="read.php"> Users Information</a>
-        <a href="user.php">Add Users Details</a>
-        <a href="register.php">Add New Users</a>
-        <a href="#dashboard">Dashboard</a>
-    </div>
-<br>
-<br>
 <table class="table">
 
     <thead>
